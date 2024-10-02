@@ -114,14 +114,14 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-    // Add below snippet early in the eager phase
-    if (getMetadata('experiment')
-      || Object.keys(getAllMetadata('campaign')).length
-      || Object.keys(getAllMetadata('audience')).length) {
-      // eslint-disable-next-line import/no-relative-packages
-      const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
-      await runEager(document, { audiences: AUDIENCES }, pluginContext);
-    }
+  // Add below snippet early in the eager phase
+  if (getMetadata('experiment')
+    || Object.keys(getAllMetadata('campaign')).length
+    || Object.keys(getAllMetadata('audience')).length) {
+    // eslint-disable-next-line import/no-relative-packages
+    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
+    await runEager(document, { audiences: AUDIENCES }, pluginContext);
+  }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -163,14 +163,14 @@ async function loadLazy(doc) {
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
 
-    // Add below snippet at the end of the lazy phase
-    if ((getMetadata('experiment')
-      || Object.keys(getAllMetadata('campaign')).length
-      || Object.keys(getAllMetadata('audience')).length)) {
-      // eslint-disable-next-line import/no-relative-packages
-      const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
-      await runLazy(document, { audiences: AUDIENCES }, pluginContext);
-    }
+  // Add below snippet at the end of the lazy phase
+  if ((getMetadata('experiment')
+    || Object.keys(getAllMetadata('campaign')).length
+    || Object.keys(getAllMetadata('audience')).length)) {
+    // eslint-disable-next-line import/no-relative-packages
+    const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
+    await runLazy(document, { audiences: AUDIENCES }, pluginContext);
+  }
 }
 
 /**
