@@ -152,11 +152,15 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
+        "component": "radio-group",
         "name": "style",
         "value": "",
         "label": "Style",
-        "valueType": "string"
+        "valueType": "string",
+        "options": [
+        { "name": "Highlight", "value": "highlight" },
+        { "name": "Announce", "value": "announce" }
+      ]
       }
     ]
   },
