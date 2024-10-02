@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 export default async function decorate(block) {
-  const aempublishurl = 'https://publish-p99452-e916802.adobeaemcloud.com';
-  const aemauthorurl = 'https://author-p99452-e916802.adobeaemcloud.com';
+  const aempublishurl = 'https://publish-p107109-e1000961.adobeaemcloud.com';
+  const aemauthorurl = 'https://author-p107109-e1000961.adobeaemcloud.com';
   const persistedquery = '/graphql/execute.json/aem-demo-assets/native-app-adventure';
   // const offerpath = '/content/dam/aem-demo-assets/en/adventures/bali-surf-camp/bali-surf-camp';
   const variationname = 'main';
